@@ -70,10 +70,15 @@ button:hover {
     </div>
 <script>
     function calcularLetra(nif){
+        const regex=/^\d{8}$/;
         //let letra = ['T','R','W'....]es igual a lo de abajo
+        if(regex.test(nif)){
         let letra = "TRWAGMYFPDXBNJZSQVHLCKE";
         let posicion =[nif % 23]
         return letra[posicion]
+        } else{
+            alert("debes introducir 8 digitos")
+        }
     }
     function mustraLetraNif(){
         nif= document.getElementById("nif").value;
